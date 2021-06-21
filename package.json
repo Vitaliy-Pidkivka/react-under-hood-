@@ -21,8 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|yml|yaml|css|md|vue)\""
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -44,12 +43,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "tsc && lint-staged"
     }
   },
   "lint-staged": {
-    "*.+(ts|tsx|js|jsx)": "eslint --fix",
-    "*.+(json|css|scss|less|md)": "prettier --write"
+    "**/*.+(json|js|jsx|css|less|scss|ts|tsx|md)": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.24.0",
