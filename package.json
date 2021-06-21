@@ -21,6 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint .",
     "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|yml|yaml|css|md|vue)\""
   },
   "eslintConfig": {
@@ -41,9 +42,19 @@
       "last 1 safari version"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(ts|tsx|js|jsx)": "eslint --fix",
+    "*.+(json|css|scss|less|md)": "prettier --write"
+  },
   "devDependencies": {
     "eslint-plugin-react": "^7.24.0",
     "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.3.1"
   }
 }
