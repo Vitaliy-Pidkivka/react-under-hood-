@@ -1,14 +1,14 @@
 import React from 'react'
 import './App.css'
+import UseMemoExample from './components/UseMemoExample'
+import UseCallbackExample from './components/UseCallbackExample/UseCallbackExample'
 
 const App: React.FC = () => {
   return (
-    <div>
-      <div>
-        <div></div>
-        sad <div>sds</div>
-      </div>
-    </div>
+    <>
+      {/*<UseMemoExample/>*/}
+      {/*<UseCallbackExample/>*/}
+    </>
   )
 }
 
